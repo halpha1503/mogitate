@@ -1,10 +1,15 @@
-[![CI](https://github.com/halpha1503/laravel_template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/halpha1503/laravel_template/actions/workflows/ci.yml)# Laravel_template
+![CI](https://github.com/halpha1503/laravel_template/actions/workflows/ci.yml/badge.svg?branch=main)
 
-## 使用技術（実行環境）
-- PHP 8.5.3
-- Laravel 8.83.8
-- MySQL 8.4
-- nginx 1.29.5
+## 使用技術
+### アプリケーション
+![PHP](https://img.shields.io/badge/PHP-8.5.3-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-12.53.0-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.4-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![nginx](https://img.shields.io/badge/nginx-1.29.5-009639?style=for-the-badge&logo=nginx&logoColor=white)
+
+### 開発基盤
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 
 ## 環境構築手順
@@ -24,7 +29,7 @@ cp .env.example .env
 
 .env内の環境変数を変更。
 ```
-php artisan key generate
+php artisan key:generate
 php artisan migrate
 php artisan db:seed
 ```
@@ -34,10 +39,5 @@ php artisan db:seed
 - ユーザー登録：http://localhost/register
 - phpMyAdmin：http://localhost:8080/
 
-## 使用技術（実行環境）
-- PHP 8.1
-- Laravel 8.83.8
-- MySQL 8.4
-- nginx 1.29.5
 
 
