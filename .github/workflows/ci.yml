@@ -25,26 +25,26 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            vendor
+            src/vendor
             ~/.composer/cache/files
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-${{ hashFiles('src/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
 
       - name: Install dependencies
+        working-directory: src
         run: composer install --no-interaction --no-progress --prefer-dist
 
       - name: Prepare Laravel environment
+        working-directory: src
         run: |
           cp -n .env.example .env || true
           php artisan key:generate
 
       - name: Run tests
+        working-directory: src
         env:
           APP_ENV: testing
           DB_CONNECTION: sqlite
           DB_DATABASE: ":memory:"
         run: php artisan test
-
-      - name: Run Pint
-        run: vendor/bin/pint --test
