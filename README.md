@@ -1,5 +1,10 @@
 ![CI](https://github.com/halpha1503/laravel_template/actions/workflows/ci.yml/badge.svg?branch=main)
 
+# Laravel-template
+
+## このアプリについて
+ここに設計目的を書く
+
 ## 使用技術
 ### アプリケーション
 ![PHP](https://img.shields.io/badge/PHP-8.5.3-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -39,5 +44,9 @@ php artisan db:seed
 - ユーザー登録：http://localhost/register
 - phpMyAdmin：http://localhost:8080/
 
+## ER図
 
+## 画面遷移図
+
+## ディレクトリ構成
 
