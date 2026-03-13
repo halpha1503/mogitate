@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-</head>
+@extends('layouts.base')
 
-<body>
-    <header class="header">
-        <div class="header__inner">
-            <a class="header__logo" href="/">
-                FashionablyLate
-            </a>
-        </div>
-    </header>
+@section('tab-title')
+    title
+@endsection
 
-    <main class="main">
-        @yield("content")
-    </main>
-</body>
-</html>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/index.css')}}">
+@endsection
+
+@section('content')
+    <div class="index">
+
+    </div>
+@endsection

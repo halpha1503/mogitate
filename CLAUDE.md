@@ -23,6 +23,9 @@
 - 命名規則を崩すこと
 
 ## 参照順序
+0. ~/.claude/CLAUDE.md
+
+(以下は全て本リポジトリ内)
 1. CLAUDE.md
 2. ARCHITECTURE.md
 3. AI_FEATURE_MAP.md

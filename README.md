@@ -36,8 +36,8 @@
 
 ### 1. リポジトリをコピーし、Dockerをビルド。
 ```shell
-git clone https://github.com/halpha1503/
-cd test_contact-form
+git clone https://github.com/halpha1503/(repo-name)
+cd (repo-name)
 docker-compose up -d --build
 ```
 
@@ -48,7 +48,7 @@ composer install
 cp .env.example .env
 ```
 
-### 3. .envを開き、以下の環境変数を設定。
+### 3. .envをテキストエディタ等で編集し、以下の環境変数を設定。
 ```text
 DB_CONNECTION=mysql
 DB_HOST=mysql
@@ -66,8 +66,7 @@ php artisan db:seed
 ```
 
 ## 開発環境
-- お問い合わせ画面：http://localhost/
-- ユーザー登録：http://localhost/register
+- メイン画面：http://localhost/
 - phpMyAdmin：http://localhost:8080/
 
 ## ER図

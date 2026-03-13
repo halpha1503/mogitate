@@ -116,18 +116,20 @@ Blade に複雑な業務ロジックを書かない。
 - store 処理で最終保存を行う
 - 保存処理は Service に集約する
 - Blade は表示専用とする
-- 命名規則は Contact 機能に合わせる
+- 命名規則は Public 機能に合わせる
 
 ### 模範構成
-- ContactController
-- ContactRequest
-- ContactService
-- Contact
+- ex)
+    - ContactController
+    - ContactRequest
+    - ContactService
+    - Contact
 
 ### View
-- contact/index.blade.php
-- contact/confirm.blade.php
-- contact/thanks.blade.php
+- ex)
+    - contact/index.blade.php
+    - contact/confirm.blade.php
+    - contact/thanks.blade.php
 
 ⸻
 
