@@ -4,6 +4,9 @@
 
 ## 更新情報
 
+### v2.1_ANE
+- bladeとcssの見本を整備。
+
 ### v2_ANE
 - ANE="AI-Native Edition"
 - ARCHITECTURE.md、CLAUDE.md、AI_FEATURE_MAP.mdを整備。
