@@ -9,12 +9,12 @@
 
 このプロジェクトは Laravel を使用した Web アプリケーションです。
 
-主な機能は以下の2系統です。
+主な機能は以下の通りです。
 
-- 公開側機能 
-  Ex) ユーザーがお問い合わせフォームから内容を送信する機能
-- 管理側機能
-  Ex) 管理者が認証後に問い合わせ内容を確認し、必要に応じて削除する機能
+- ユーザーが商品一覧ページを閲覧する機能
+- ユーザーが商品一覧ページ上でキーワード検索、並べ替えを行う。
+
+このプロジェクトでは管理者認証機能を作成しません。
 
 アプリケーションは以下のレイヤー構造を前提とします。
 
@@ -98,8 +98,8 @@ Blade に複雑な業務ロジックを書かない。
 
 ## 5. 公開機能の実装パターン
 
-公開機能は、ユーザーが直接操作する問い合わせ機能を指す。
-このプロジェクトでは Contact 機能が公開機能の模範実装である。
+公開機能は、ユーザーが直接操作する機能を指す。
+このプロジェクトでは Product 機能が公開機能の模範実装である。
 
 ### 基本フロー
 1.	ユーザーが入力画面を開く
@@ -119,17 +119,13 @@ Blade に複雑な業務ロジックを書かない。
 - 命名規則は Public 機能に合わせる
 
 ### 模範構成
-- ex)
-    - ContactController
-    - ContactRequest
-    - ContactService
-    - Contact
+- ProductController（単数形）
+- ProductRequest（単数形）
+- ProductService（単数形）
+- Product（単数形）
 
 ### View
-- ex)
-    - contact/index.blade.php
-    - contact/confirm.blade.php
-    - contact/thanks.blade.php
+- index.blade.php
 
 ⸻
 
@@ -146,8 +142,6 @@ Blade に複雑な業務ロジックを書かない。
 5.	必要に応じて問い合わせデータを削除する
 
 ### 設計方針
-- 管理機能は認証を前提とする
-- 管理画面は公開画面と責務を分ける
 - 一覧表示と削除処理の責務を明確にする
 - 削除などの副作用を伴う処理は必要に応じて Service へ分離する
 - 管理用 Blade は公開用 Blade と区別する
@@ -157,22 +151,27 @@ Blade に複雑な業務ロジックを書かない。
 
 ## 7. データベース設計
 
-### contacts テーブル
+### products テーブル
 - id
-- category_id
 - name
-- email
-- message
+- price
+- image
+- description
 - created_at
 - updated_at
 
-### categories テーブル
+### seasons テーブル
 - id
 - name
 - created_at
 - updated_at
 
-contacts は categories とリレーションを持つ。
+### product_seasonテーブル(中間テーブル)
+- id
+- product_id
+- season_id
+- created_at
+- updated_at
 
 ⸻
 

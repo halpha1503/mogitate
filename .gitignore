@@ -30,3 +30,9 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+.claude
+AI_FEATURE_MAP.md
+ARCHITECTURE.md
+CLAUDE.md
+docs

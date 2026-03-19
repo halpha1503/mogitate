@@ -9,9 +9,22 @@
 4. Blade には表示処理のみを書く
 5. 既存の命名規則と構造を維持する
 
+## 命名規則
+Laravelの慣例に従い、クラス名は単数形を使用する。
+
+| 種別 | 正しい例 | 誤り |
+|------|----------|------|
+| Controller | `ProductController` | ~~ProductsController~~ |
+| Request | `ProductRequest` | ~~ProductsRequest~~ |
+| Service | `ProductService` | ~~ProductsService~~ |
+| Model | `Product`, `Season` | ~~Products~~, ~~Seasons~~ |
+
+- URLパス（`/products`）は複数形のままでOK
+- テーブル名（`products`, `seasons`）も複数形のままでOK
+- クラス名・ファイル名のみ単数形
+
 ## 実装方針
-- 公開機能は (Name) 機能を模範にする
-- 管理機能は Admin 機能を模範にする
+- 公開機能は Product 機能を模範にする
 - 既存コードの構造を優先する
 - 新しい設計パターンを勝手に導入しない
 - 新しいライブラリやフロントエンドフレームワークを勝手に追加しない
