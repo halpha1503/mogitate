@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/">
+            <a class="header__logo" href="/products/">
                 mogitate
             </a>
         </div>
@@ -23,6 +23,7 @@
     <main class="main">
         @yield("content")
     </main>
+    @yield("scripts")
 </body>
 
 </html>

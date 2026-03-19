@@ -26,6 +26,13 @@ body {
     font-style: italic;
 }
 
+/* form error */
+.form-error {
+    color: #f00;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
 /* main */
 .main {
     max-width: 1200px;
