@@ -104,10 +104,43 @@
 .detail__season-item {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     font-size: 14px;
     color: #333;
     cursor: pointer;
+}
+
+.detail__season-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.detail__season-item input[type="checkbox"]:checked {
+    background-color: #333;
+    border-color: #333;
+}
+
+.detail__season-item input[type="checkbox"]:checked::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translate(-1px, -1px);
+    position: absolute;
 }
 
 /* description */

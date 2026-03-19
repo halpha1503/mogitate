@@ -19,7 +19,7 @@
 }
 
 .products-header__add-btn {
-    background-color: #f5a623;
+    background-color: #faa929;
     color: #000;
     text-decoration: none;
     padding: 10px 20px;
@@ -54,7 +54,7 @@
     width: 100%;
     margin-top: 8px;
     padding: 10px 0;
-    background-color: #f5a623;
+    background-color: #f5c800;
     color: #000;
     border: none;
     border-radius: 4px;
@@ -176,6 +176,7 @@
     font-size: 14px;
     text-decoration: none;
     color: #333;
+    background-color: #fff;
 }
 
 .pagination__arrow {

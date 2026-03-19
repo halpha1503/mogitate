@@ -15,15 +15,15 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('/products');
 });
 
 // /products/register と /products/search を {id} より先に定義（ルート競合防止）
-Route::get('/products',                   [ProductController::class, 'index']);
-Route::get('/products/register',          [ProductController::class, 'create']);
-Route::post('/products/register',         [ProductController::class, 'store']);
-Route::get('/products/search',            [ProductController::class, 'search']);
-Route::get('/products/detail/{id}',       [ProductController::class, 'show']);
-Route::get('/products/{id}/update',       [ProductController::class, 'edit']);
-Route::patch('/products/{id}/update',     [ProductController::class, 'update']);
-Route::delete('/products/{id}/delete',    [ProductController::class, 'destroy']);
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/register', [ProductController::class, 'create']);
+Route::post('/products/register', [ProductController::class, 'store']);
+Route::get('/products/search', [ProductController::class, 'search']);
+Route::get('/products/detail/{id}', [ProductController::class, 'show']);
+Route::get('/products/{id}/update', [ProductController::class, 'edit']);
+Route::patch('/products/{id}/update', [ProductController::class, 'update']);
+Route::delete('/products/{id}/delete', [ProductController::class, 'destroy']);
