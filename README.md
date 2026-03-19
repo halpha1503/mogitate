@@ -63,17 +63,100 @@ php artisan db:seed
 
 ## 開発環境
 
-- メイン画面：http://localhost/
+- メイン画面：http://localhost/products/
 - phpMyAdmin：http://localhost:8080/
 
 ## ER図
 
-ここにはる
+<img src=.drawio.png>
 
 ## 画面遷移図
 
-ここにはる
+```mermaid
+graph LR
+    A["商品一覧<br/>/products"]
+    B["商品詳細<br/>/products/detail/{id}"]
+    C["商品更新<br/>/products/{id}/update"]
+    D["商品登録<br/>/products/register"]
+    E["検索結果<br/>/products/search"]
+    F["削除<br/>/products/{id}/delete"]
+
+    A -->|商品カードクリック| B
+    A -->|+商品を追加リンク| D
+    A -->|検索ボタン| E
+
+    B -->|更新ページへ遷移| C
+
+    C -->|変更を保存| A
+    C -->|戻るボタン| A
+    C -->|ゴミ箱ボタン| F
+
+    D -->|登録| A
+    D -->|戻るボタン| A
+
+    E -->|商品カードクリック| B
+```
 
 ## ディレクトリ構成
 
-ここにはる
+```text
+  src/
+  ├── app/
+  │   ├── Http/
+  │   │   ├── Controllers/
+  │   │   │   ├── Controller.php
+  │   │   │   └── ProductController.php
+  │   │   ├── Middleware/
+  │   │   ├── Requests/
+  │   │   │   └── ProductRequest.php
+  │   │   └── Kernel.php
+  │   ├── Models/
+  │   │   ├── Product.php
+  │   │   ├── Season.php
+  │   │   └── User.php
+  │   ├── Providers/
+  │   │   └── AppServiceProvider.php
+  │   └── Services/
+  │       └── ProductService.php
+  ├── bootstrap/
+  ├── config/
+  ├── database/
+  │   ├── factories/
+  │   │   └── UserFactory.php
+  │   ├── migrations/
+  │   │   ├── 2026_03_19_075635_create_products_table.php
+  │   │   ├── 2026_03_19_075636_create_seasons_table.php
+  │   │   └── 2026_03_19_075637_create_product_season_table.php
+  │   └── seeders/
+  │       ├── DatabaseSeeder.php
+  │       ├── ProductSeeder.php
+  │       └── SeasonSeeder.php
+  ├── public/
+  │   ├── css/
+  │   │   ├── common.css
+  │   │   ├── detail.css
+  │   │   ├── index.css
+  │   │   ├── register.css
+  │   │   └── sanitize.css
+  │   ├── storage -> /var/www/storage/app/public
+  │   ├── favicon.ico
+  │   └── index.php
+  ├── resources/
+  │   └── views/
+  │       ├── layouts/
+  │       │   └── base.blade.php
+  │       ├── detail.blade.php
+  │       ├── index.blade.php
+  │       ├── register.blade.php
+  │       └── search.blade.php
+  ├── routes/
+  │   └── web.php
+  ├── storage/
+  │   └── app/
+  │       └── public/
+  │           └── (商品画像ファイル群)
+  ├── tests/
+  ├── artisan
+  ├── composer.json
+  └── composer.lock
+```

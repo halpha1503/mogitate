@@ -47,10 +47,6 @@ class ProductController extends Controller
         return view('detail', compact('product'));
     }
 
-    public function edit(string $id)
-    {
-    }
-
     public function update(ProductRequest $request, string $id)
     {
         $this->productService->updateProduct(
